@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://sblr3tc0v61g"]
+
+[ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_cto6f"]
+[ext_resource type="Texture2D" uid="uid://c5pa3s3rh0rsg" path="res://resources/graphics/player/player.png" id="1_s6fwr"]
+[ext_resource type="Texture2D" uid="uid://bwa41lj2my2kx" path="res://resources/graphics/projectiles/blue.png" id="2_p05ye"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_cto6f")
+
+[node name="Player_img" type="Sprite2D" parent="."]
+position = Vector2(21, -104)
+texture = ExtResource("1_s6fwr")
+offset = Vector2(-21, 104)
+
+[node name="Laser_img" type="Sprite2D" parent="Player_img"]
+visible = false
+position = Vector2(18, -188)
+texture = ExtResource("2_p05ye")

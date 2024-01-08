@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwbir0wdo22o3"]
+
+[ext_resource type="PackedScene" uid="uid://xfdo6xd8dk7e" path="res://scenes/levels/level.tscn" id="1_wu7gc"]
+[ext_resource type="Texture2D" uid="uid://c6ccjw4ryfgd" path="res://resources/graphics/ground/stones.png" id="2_38hsx"]
+[ext_resource type="Script" path="res://scenes/scripts/outside.gd" id="2_qa0x7"]
+
+[node name="Outside" instance=ExtResource("1_wu7gc")]
+script = ExtResource("2_qa0x7")
+
+[node name="Stones" type="Sprite2D" parent="ground" index="0"]
+texture_repeat = 2
+position = Vector2(259, 789)
+texture = ExtResource("2_38hsx")
+region_enabled = true
+region_rect = Rect2(-801.818, -260.839, 100000, 100000)
+
+[node name="Player" parent="." index="1"]
+position = Vector2(231, 148)
+
+[node name="DirectionalLight2D" parent="." index="2"]
+energy = 0.5
+
+[connection signal="tree_exited" from="Drone" to="Player" method="_on_drone_tree_exited"]

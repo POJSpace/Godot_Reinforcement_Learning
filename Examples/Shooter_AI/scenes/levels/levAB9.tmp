@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://xfdo6xd8dk7e"]
+
+[ext_resource type="Script" path="res://scenes/scripts/level.gd" id="1_naa0k"]
+[ext_resource type="PackedScene" uid="uid://sblr3tc0v61g" path="res://scenes/player/player.tscn" id="2_fnpqa"]
+[ext_resource type="PackedScene" uid="uid://yvm3ltl8l2m8" path="res://scenes/objects/bed.tscn" id="3_f37r8"]
+[ext_resource type="PackedScene" uid="uid://d0vi1pq2h1v3h" path="res://scenes/objects/wall.tscn" id="3_ltf72"]
+[ext_resource type="PackedScene" uid="uid://bv4i4cauubwfb" path="res://scenes/objects/toilet.tscn" id="5_eyyb0"]
+[ext_resource type="PackedScene" uid="uid://djnvm3wx7qgr8" path="res://scenes/enemies/drone.tscn" id="6_b3bs8"]
+[ext_resource type="PackedScene" uid="uid://hbapq8acq3v8" path="res://scenes/objects/gate.tscn" id="7_2torc"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_naa0k")
+
+[node name="Gate" parent="." instance=ExtResource("7_2torc")]
+position = Vector2(-805, 114)
+rotation = -1.57079
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(912, 438)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("3_ltf72")]
+position = Vector2(350, -375)
+rotation = 1.5708
+
+[node name="Wall" parent="Walls" instance=ExtResource("3_ltf72")]
+position = Vector2(-279, 232)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("3_ltf72")]
+position = Vector2(-284, -953)
+
+[node name="Bed" parent="." instance=ExtResource("3_f37r8")]
+position = Vector2(927, 446)
+
+[node name="Player" parent="." instance=ExtResource("2_fnpqa")]
+unique_name_in_owner = true
+position = Vector2(153, 26)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="toilet" parent="." instance=ExtResource("5_eyyb0")]
+position = Vector2(1111, -368)
+
+[node name="drone" parent="." instance=ExtResource("6_b3bs8")]
+position = Vector2(1060, -38)
+
+[connection signal="player_entere_gate" from="Gate" to="." method="_on_gate_player_entere_gate"]
+[connection signal="granade" from="Player" to="." method="_on_player_granade"]
+[connection signal="laser" from="Player" to="." method="_on_player_laser"]

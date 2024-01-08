@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0vi1pq2h1v3h"]
+
+[ext_resource type="PackedScene" uid="uid://dubf7qxne77rc" path="res://scenes/objects/object_template.tscn" id="1_3fn11"]
+[ext_resource type="Texture2D" uid="uid://c32trs441oa3" path="res://resources/graphics/objects/Billboard.png" id="2_2pr0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3t2f"]
+size = Vector2(1532, 44)
+
+[node name="Wall" instance=ExtResource("1_3fn11")]
+collision_layer = 4
+collision_mask = 11
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1.22964, 1)
+texture = ExtResource("2_2pr0c")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_h3t2f")

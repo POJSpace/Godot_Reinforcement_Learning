@@ -1,0 +1,5 @@
+1. copy template
+2. dotnet add package Microsoft.ML.OnnxRuntime --version 1.16.3
+3. pip install rl_agents
+4. install new .net and runtime
+5. restart computer

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvfgn6cibcwpg"]
+
+[ext_resource type="PackedScene" uid="uid://xfdo6xd8dk7e" path="res://scenes/levels/level.tscn" id="1_0fr8l"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="2_6ficd"]
+[ext_resource type="PackedScene" uid="uid://d0vi1pq2h1v3h" path="res://scenes/objects/wall.tscn" id="3_cifg2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource("1_0fr8l")]
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("2_6ficd")
+control_mode = 2
+onnx_model_path = "finale_model_best.onnx"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1675, 2013)
+zoom = Vector2(0.2, 0.2)
+
+[node name="Wall" parent="." instance=ExtResource("3_cifg2")]
+position = Vector2(2121, -394)
+scale = Vector2(5, 5)
+
+[node name="Wall2" parent="." instance=ExtResource("3_cifg2")]
+position = Vector2(1968, 4635)
+scale = Vector2(5, 5)
+
+[node name="Wall3" parent="." instance=ExtResource("3_cifg2")]
+position = Vector2(-863, 2158)
+rotation = -1.57079
+scale = Vector2(5, 5)
+
+[node name="Wall4" parent="." instance=ExtResource("3_cifg2")]
+position = Vector2(4674, 2221)
+rotation = -1.57079
+scale = Vector2(5, 5)

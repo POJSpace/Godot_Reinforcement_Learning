@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://hbapq8acq3v8"]
+
+[ext_resource type="PackedScene" uid="uid://dubf7qxne77rc" path="res://scenes/objects/object_template.tscn" id="1_6hsjs"]
+[ext_resource type="Texture2D" uid="uid://cdce8cmoh833x" path="res://resources/graphics/objects/gate.png" id="2_72vxp"]
+[ext_resource type="Script" path="res://scenes/scripts/gate.gd" id="2_v0ung"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad0cm"]
+size = Vector2(896, 322)
+
+[node name="Gate" instance=ExtResource("1_6hsjs")]
+collision_layer = 20
+script = ExtResource("2_v0ung")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_72vxp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(-1439, -786, -1434, 561, -1401, 663, -1336, 730, -1261, 769, -1164, 782, -829, 782, -375, 774, -367, 646, -354, 545, -329, 490, -270, 481, -100, 473, 201, 468, 476, 494, 485, 638, 492, 777, 753, 777, 1243, 775, 1354, 774, 1405, 758, 1459, 723, 1502, 685, 1543, 615, 1557, 552, 1561, 235, 1561, -32, 1553, -455, 1557, -782)
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+unique_name_in_owner = true
+collision_layer = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(50, 608)
+shape = SubResource("RectangleShape2D_ad0cm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
