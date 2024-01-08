@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://byx3u52g24qb2"]
+
+[ext_resource type="Script" path="res://test.cs" id="1_cf88q"]
+[ext_resource type="PackedScene" uid="uid://cfgpuqq10s21a" path="res://main.tscn" id="1_wh1md"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="2_u3tgj"]
+
+[node name="test" type="Node3D"]
+script = ExtResource("1_cf88q")
+
+[node name="main" parent="." instance=ExtResource("1_wh1md")]
+
+[node name="Sync" type="Node" parent="main"]
+script = ExtResource("2_u3tgj")
+control_mode = 2
+onnx_model_path = "model_1.onnx"
+
+[node name="Camera3D" type="Camera3D" parent="main"]
+transform = Transform3D(1, 0, 0, 0, 0.519147, 0.854685, 0, -0.854685, 0.519147, 6, 7.84752, 10.7058)

@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://t0kac6aeh5d"]
+
+[ext_resource type="PackedScene" uid="uid://cfgpuqq10s21a" path="res://main.tscn" id="1_qoc37"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="2_xapfg"]
+
+[node name="parallel" type="Node3D"]
+
+[node name="main3" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.246, 0, 0)
+
+[node name="main4" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9641, 0, 0)
+
+[node name="main5" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.182, 0, 0)
+
+[node name="main6" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6242, 0, 0)
+
+[node name="main11" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7227, 0, -16.3842)
+
+[node name="main12" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9406, 0, -16.3842)
+
+[node name="main13" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3827, 0, -16.3842)
+
+[node name="main14" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6026, 0, -16.3842)
+
+[node name="main17" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.246, 0, -31.2494)
+
+[node name="main18" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9641, 0, -31.2494)
+
+[node name="main19" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.182, 0, -31.2494)
+
+[node name="main20" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6242, 0, -31.2494)
+
+[node name="main25" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7227, 0, -47.6335)
+
+[node name="main26" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9406, 0, -47.6335)
+
+[node name="main27" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3827, 0, -47.6335)
+
+[node name="main28" parent="." instance=ExtResource("1_qoc37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6026, 0, -47.6335)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.012828, 0.999918, 0, -0.999918, 0.012828, 28.7678, 34.4195, -19.0917)
+fov = 85.1318
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("2_xapfg")
+speed_up = 16
