@@ -19,12 +19,13 @@ func _physics_process(delta):
 	
 	move_and_slide() # function to use the velocity and rotation
 
+func restart_pos():
+	position = Vector2(50, 230)
 
 func _on_outside_body_entered(body):
-	# emit when car exited the track
+	restart_pos()
+	print("Auto vyjelo z trati: ", body)
 	# ADD REWARD HERE
-	pass # Replace with function body.
-
 
 func _on_gate_1_body_entered(body):
 	# ADD REWARD HERE

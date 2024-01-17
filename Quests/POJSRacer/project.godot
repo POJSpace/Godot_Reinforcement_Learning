@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="POJSpace_practice_1"
-run/main_scene="res://race.tscn"
+config/name="POJRacer"
+run/main_scene="res://Scenes/race.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

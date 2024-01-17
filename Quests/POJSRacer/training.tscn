@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://cop86gux2ltf2"]
+
+[ext_resource type="PackedScene" uid="uid://duveemrnqg5iw" path="res://Scenes/race.tscn" id="1_48ld2"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="2_66s2o"]
+
+[node name="training" type="Node2D"]
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("2_66s2o")
+control_mode = 0
+
+[node name="Race_scenes" type="Node2D" parent="."]
+
+[node name="Race7" parent="Race_scenes" instance=ExtResource("1_48ld2")]
+position = Vector2(-120, -56)
+
+[node name="Race" parent="Race_scenes" instance=ExtResource("1_48ld2")]
+position = Vector2(895, -53)
+
+[node name="Race2" parent="Race_scenes" instance=ExtResource("1_48ld2")]
+position = Vector2(-117, 507)
+
+[node name="Race3" parent="Race_scenes" instance=ExtResource("1_48ld2")]
+position = Vector2(901, 519)
+
+[node name="Race4" parent="Race_scenes" instance=ExtResource("1_48ld2")]
+position = Vector2(1906, -52)
+
+[node name="Race5" parent="Race_scenes" instance=ExtResource("1_48ld2")]
+position = Vector2(1921, 527)
+
+[node name="Race6" parent="Race_scenes" instance=ExtResource("1_48ld2")]
+position = Vector2(-106, 1075)
+
+[node name="Race8" parent="Race_scenes" instance=ExtResource("1_48ld2")]
+position = Vector2(912, 1091)
+
+[node name="Race9" parent="Race_scenes" instance=ExtResource("1_48ld2")]
+position = Vector2(1939, 1102)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(902, 525)
+zoom = Vector2(0.38, 0.38)

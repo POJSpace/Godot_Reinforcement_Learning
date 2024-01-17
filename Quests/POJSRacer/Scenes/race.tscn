@@ -32,18 +32,13 @@ texture = ExtResource("2_d8v50")
 [node name="AIController2D" type="Node2D" parent="race_car"]
 script = ExtResource("4_hp6kr")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.2, 1.2)
-
 [node name="outside" type="Area2D" parent="."]
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="outside"]
-visible = false
-polygon = PackedVector2Array(-341, -217, -385, -173, -424, -119, -447, -50, -449, 35, -430, 104, -388, 180, -322, 234, -227, 272, -138, 274, -14, 274, 98, 275, 209, 274, 256, 267, 312, 243, 347, 219, 398, 171, 435, 99, 453, 17, 444, -44, 429, -101, 377, -191, 308, -237, 233, -263, 92, -271, -26, -269, -194, -271, -302, -241, -341, -217, -501, -272, -575, -323, 577, -325, 576, 322, -575, 322, -577, -322)
+polygon = PackedVector2Array(-341, -217, -385, -173, -424, -119, -447, -50, -449, 35, -430, 104, -388, 180, -322, 234, -227, 272, -138, 274, -14, 274, 98, 275, 209, 274, 256, 267, 312, 243, 347, 219, 398, 171, 435, 99, 453, 17, 444, -44, 429, -101, 377, -191, 308, -237, 233, -263, 92, -271, -26, -269, -194, -271, -302, -241, -341, -217, -501, -272, -511, -289, 502, -284, 508, 289, -496, 288, -511, -287)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="outside"]
-visible = false
 polygon = PackedVector2Array(-232, -100, -261, -79, -279, -52, -292, -2, -282, 54, -243, 96, -181, 116, -50, 117, 188, 120, 237, 105, 261, 81, 285, 53, 293, 9, 288, -34, 261, -76, 226, -98, 160, -115, 77, -111, -191, -113)
 
 [node name="Gates" type="Node2D" parent="."]

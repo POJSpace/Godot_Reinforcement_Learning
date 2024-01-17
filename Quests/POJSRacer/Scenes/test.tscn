@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://btoreibfffciv"]
+
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="1_qdqnl"]
+[ext_resource type="PackedScene" uid="uid://duveemrnqg5iw" path="res://Scenes/race.tscn" id="2_kkb2a"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("1_qdqnl")
+control_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.2, 1.2)
+
+[node name="Race" parent="." instance=ExtResource("2_kkb2a")]
