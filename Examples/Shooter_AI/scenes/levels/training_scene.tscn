@@ -12,7 +12,6 @@ zoom = Vector2(0.055, 0.055)
 
 [node name="Sync" type="Node" parent="."]
 script = ExtResource("2_nd0ql")
-action_repeat = 16
 speed_up = 4
 
 [node name="Level" parent="." instance=ExtResource("1_nx38y")]

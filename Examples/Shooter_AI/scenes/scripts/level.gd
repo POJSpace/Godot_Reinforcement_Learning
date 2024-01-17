@@ -67,9 +67,9 @@ func _on_drone_spawn_timer_timeout():
 	
 	
 func get_random_pos():
-	var pos = Vector2(randf_range(100, 3000), randf_range(100,3000))
+	var pos = Vector2(randf_range(0, 3000), randf_range(0,3000))
 	
-	if pos >= player.position + Vector2(-500, -500) and pos <= player.position + Vector2(500,500):
+	if pos >= player.position + Vector2(-700, -700) and pos <= player.position + Vector2(700,700):
 		#print("bad position drone: ", pos)
 		pos = get_random_pos()
 		

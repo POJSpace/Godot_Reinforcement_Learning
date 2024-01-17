@@ -34,9 +34,9 @@ func _process(delta):
 		ai_controller.needs_reset = false
 		ai_controller.reward -= 10.0
 		ai_controller.reset()
-		print(start_pos, global_position)
+		#print(start_pos, global_position)
 		global_position = start_pos
-		print(start_pos, global_position)
+		#print(start_pos, global_position)
 		level.reset()
 		return
 	
@@ -52,8 +52,8 @@ func _process(delta):
 		velocity = direction * max_speed * delta
 		look_at(get_global_mouse_position())
 	else:
-		velocity.x = ai_controller.move.x * max_speed * delta
-		velocity.y = ai_controller.move.y * max_speed * delta
+		#velocity.x = ai_controller.move.x * max_speed * delta
+		#velocity.y = ai_controller.move.y * max_speed * delta
 		rotate(ai_controller.rotation*delta*rotation_speed)
 
 	move_and_slide() 
@@ -97,16 +97,18 @@ func reset():
 
 
 func _on_area_2d_body_entered(body):
+	if body.is_in_group("enemy"):
 		ai_controller.reward -= 20.0
+		body.queue_free()
 		#print(body)
 
 
 
 
 func _on_drone_node_child_exiting_tree(node):
-	
-	if node.is_in_group("enemy"):
+	level.spawn_drone()
+	if node.is_in_group("enemy") and node.killed:
 		ai_controller.reward += 50
 		ai_controller.n_steps -= 50
 		#print("enemy died")
-		level.spawn_drone()
+		

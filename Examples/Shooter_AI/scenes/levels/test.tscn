@@ -11,7 +11,7 @@
 [node name="Sync" type="Node" parent="."]
 script = ExtResource("2_6ficd")
 control_mode = 2
-onnx_model_path = "finale_model_best.onnx"
+onnx_model_path = "new_model.onnx"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1675, 2013)

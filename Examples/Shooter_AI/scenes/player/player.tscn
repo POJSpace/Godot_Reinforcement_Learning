@@ -97,8 +97,8 @@ position = Vector2(99, 6)
 [node name="RaycastSensor2D" type="Node2D" parent="."]
 script = ExtResource("5_xls4n")
 collision_mask = 6
-n_rays = 32.0
-ray_length = 1000
+n_rays = 64.0
+ray_length = 1500
 
 [node name="AIController2D" type="Node2D" parent="."]
 script = ExtResource("6_g4q1k")

@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://duveemrnqg5iw"]
+
+[ext_resource type="Texture2D" uid="uid://bslsrh82oxn7n" path="res://assets/racer_track1.jpg" id="1_5aimk"]
+[ext_resource type="Script" path="res://Race_car.gd" id="2_52ca4"]
+[ext_resource type="Texture2D" uid="uid://gt51uuj4kimf" path="res://assets/racer_car.png" id="2_d8v50"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/controller/ai_controller_2d.gd" id="4_hp6kr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpjlh"]
+size = Vector2(28, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn0xq"]
+size = Vector2(146, 20)
+
+[node name="Race" type="Node2D"]
+
+[node name="track" type="Sprite2D" parent="."]
+texture = ExtResource("1_5aimk")
+
+[node name="race_car" type="CharacterBody2D" parent="."]
+position = Vector2(47, 230)
+script = ExtResource("2_52ca4")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="race_car"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_vpjlh")
+
+[node name="RacerCar" type="Sprite2D" parent="race_car"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_d8v50")
+
+[node name="AIController2D" type="Node2D" parent="race_car"]
+script = ExtResource("4_hp6kr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.2, 1.2)
+
+[node name="outside" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="outside"]
+visible = false
+polygon = PackedVector2Array(-341, -217, -385, -173, -424, -119, -447, -50, -449, 35, -430, 104, -388, 180, -322, 234, -227, 272, -138, 274, -14, 274, 98, 275, 209, 274, 256, 267, 312, 243, 347, 219, 398, 171, 435, 99, 453, 17, 444, -44, 429, -101, 377, -191, 308, -237, 233, -263, 92, -271, -26, -269, -194, -271, -302, -241, -341, -217, -501, -272, -575, -323, 577, -325, 576, 322, -575, 322, -577, -322)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="outside"]
+visible = false
+polygon = PackedVector2Array(-232, -100, -261, -79, -279, -52, -292, -2, -282, 54, -243, 96, -181, 116, -50, 117, 188, 120, 237, 105, 261, 81, 285, 53, 293, 9, 288, -34, 261, -76, 226, -98, 160, -115, 77, -111, -191, -113)
+
+[node name="Gates" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="gate1" type="Area2D" parent="Gates"]
+position = Vector2(-174, 198)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/gate1"]
+shape = SubResource("RectangleShape2D_wn0xq")
+
+[node name="gate2" type="Area2D" parent="Gates"]
+position = Vector2(-333, 120)
+rotation = -0.700254
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/gate2"]
+shape = SubResource("RectangleShape2D_wn0xq")
+
+[node name="gate3" type="Area2D" parent="Gates"]
+position = Vector2(-370, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/gate3"]
+shape = SubResource("RectangleShape2D_wn0xq")
+
+[node name="gate4" type="Area2D" parent="Gates"]
+position = Vector2(-293, -155)
+rotation = 0.785398
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/gate4"]
+shape = SubResource("RectangleShape2D_wn0xq")
+
+[node name="gate5" type="Area2D" parent="Gates"]
+position = Vector2(0, -190)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/gate5"]
+shape = SubResource("RectangleShape2D_wn0xq")
+
+[node name="gate6" type="Area2D" parent="Gates"]
+position = Vector2(305, -145)
+rotation = -0.700254
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/gate6"]
+shape = SubResource("RectangleShape2D_wn0xq")
+
+[node name="gate7" type="Area2D" parent="Gates"]
+position = Vector2(373, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/gate7"]
+shape = SubResource("RectangleShape2D_wn0xq")
+
+[node name="gate8" type="Area2D" parent="Gates"]
+position = Vector2(290, 165)
+rotation = 0.785398
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/gate8"]
+shape = SubResource("RectangleShape2D_wn0xq")
+
+[node name="gate9" type="Area2D" parent="Gates"]
+position = Vector2(99, 199)
+rotation = 1.53644
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/gate9"]
+shape = SubResource("RectangleShape2D_wn0xq")
+
+[connection signal="body_entered" from="outside" to="race_car" method="_on_outside_body_entered"]
+[connection signal="body_entered" from="Gates/gate1" to="race_car" method="_on_gate_1_body_entered"]
+[connection signal="body_entered" from="Gates/gate2" to="race_car" method="_on_gate_2_body_entered"]
+[connection signal="body_entered" from="Gates/gate3" to="race_car" method="_on_gate_3_body_entered"]
+[connection signal="body_entered" from="Gates/gate4" to="race_car" method="_on_gate_4_body_entered"]
+[connection signal="body_entered" from="Gates/gate5" to="race_car" method="_on_gate_5_body_entered"]
+[connection signal="body_entered" from="Gates/gate6" to="race_car" method="_on_gate_6_body_entered"]
+[connection signal="body_entered" from="Gates/gate7" to="race_car" method="_on_gate_7_body_entered"]
+[connection signal="body_entered" from="Gates/gate8" to="race_car" method="_on_gate_8_body_entered"]
+[connection signal="body_entered" from="Gates/gate9" to="race_car" method="_on_gate_9_body_entered"]

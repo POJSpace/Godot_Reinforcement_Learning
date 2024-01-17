@@ -24,69 +24,10 @@ blend_mode = 1
 position = Vector2(0, 34)
 
 [node name="drone_spawn_timer" type="Timer" parent="drone_node"]
+wait_time = 2.0
 
-[node name="Drone20" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(4010, 951)
-
-[node name="Drone3" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(3592, 2186)
-
-[node name="Drone4" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(3078, 3188)
-
-[node name="Drone5" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(3557, 1586)
-
-[node name="Drone6" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(1077, 383)
-
-[node name="Drone9" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(32, 3231)
-
-[node name="Drone10" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(1756, 3509)
-
-[node name="Drone11" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(-109, 1733)
-
-[node name="Drone12" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(3240, 996)
-
-[node name="Drone15" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(1877, 251)
-
-[node name="Drone16" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(3476, 2745)
-
-[node name="Drone13" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(-394, 2954)
-
-[node name="Drone14" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(-391, 2208)
-
-[node name="Drone17" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(389, 385)
-
-[node name="Drone18" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(-600, 1574)
-
-[node name="Drone19" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(2300, 3640)
-
-[node name="Drone24" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(880, 3862)
-
-[node name="Drone25" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(3806, 3397)
-
-[node name="Drone22" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(4300, 2649)
-
-[node name="Drone23" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(-44, 4112)
-
-[node name="Drone21" parent="drone_node" instance=ExtResource("4_7x1g1")]
-position = Vector2(4387, 1845)
+[node name="Drone" parent="drone_node" instance=ExtResource("4_7x1g1")]
+position = Vector2(1433, 1043)
 
 [connection signal="granade" from="Player" to="." method="_on_player_granade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]

@@ -39,10 +39,6 @@ func get_reward() -> float:
 	
 func get_action_space() -> Dictionary:
 	return {
-		"move" : {
-			"size": 2,
-			"action_type": "continuous"
-		},
 		"rotate" : {
 			"size": 1,
 			"action_type": "continuous"
@@ -55,8 +51,8 @@ func get_action_space() -> Dictionary:
 	
 func set_action(action) -> void:	
 	rotation = clamp(action["rotate"][0], -1.0, 1.0)
-	move.x = action["move"][0]
-	move.y = action["move"][1]
+	#move.x = action["move"][0]
+	#move.y = action["move"][1]
 	shoot = bool(action["shoot"])
 	
 func _physics_process(delta):
