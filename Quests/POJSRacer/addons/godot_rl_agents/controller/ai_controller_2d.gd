@@ -57,3 +57,6 @@ func set_heuristic(h):
 func get_done():
 	return done
 	
+func zero_reward():
+	reward = 0.0
+	
